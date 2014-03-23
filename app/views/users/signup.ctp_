@@ -1,0 +1,19 @@
+<div class="users form">
+<?php if ($form->isFieldError('User.username')) e($form->error('User.username', null, array('class'=>'message')));?>
+<?php if ($form->isFieldError('User.password')) e($form->error('User.password', null, array('class'=>'message')));?>
+<?php echo($form->create('User',array('action'=>'signup')));?>
+	<fieldset>
+ 		<legend><?php __('Add User');?></legend>
+	<?php
+
+		echo $form->input('username');
+		echo $form->input('name');
+		echo'Parola: ';echo $form->password('password');
+		echo'Repeta parola: ';echo $form->password('password2');
+		/*echo $form->input('level');
+		echo $form->input('active');*/
+				
+	?>
+	</fieldset>
+<?php echo $form->end('Submit');?>
+</div>
